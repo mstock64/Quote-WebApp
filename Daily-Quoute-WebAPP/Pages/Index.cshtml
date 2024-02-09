@@ -1,0 +1,34 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+
+
+    @{
+        var lsl = await Model.GetQuotes();
+
+        <p>
+            <span>
+                Author:
+            </span>
+            <span>
+                @lsl.Author
+            </span>
+            <br />
+            <span>
+                Quote:
+            </span>
+            <span>
+                @lsl.quote
+            </span>
+
+        </p>
+    } 
+
+
+</div>
+
